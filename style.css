@@ -1,0 +1,89 @@
+/* login */
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;           
+    margin: 0;
+    background: radial-gradient(circle at top, #0b1d3a, #02040a);
+    color: #fff;
+    overflow: hidden;
+}
+.hidden {
+    display: none;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0;
+    gap: 15px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 30px rgba(255,215,0,0.3);
+    animation: breathe 6s ease-in-out infinite;
+    text-align: center;
+    border-radius: 10px;
+}
+@keyframes breathe {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+.login_title {
+    
+}
+.login_name {
+    padding: 10px;
+    width: 200px;
+}
+.login_password {
+    width: 200px;
+    padding: 10px;
+}
+.btn_login {
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    background-color: rgb(185, 185, 254);
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.btn_login:hover {
+    transform: scale(1.1);
+    background-color: rgb(150, 150, 255);
+}
+.error {
+    color: red;
+
+}
+/* Снежинки */
+.snowflake {
+    position: absolute;
+    top: -10px;          
+    color: white;
+    font-size: 12px;     
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none; 
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh); 
+    }
+  }
+
+  /* Letter */
+
+  #letter::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%,50% { opacity: 1; }
+    51%,100% { opacity: 0; }
+  }

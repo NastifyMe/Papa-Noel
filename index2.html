@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Секретное письмо 🎅</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #0b1d3a, #02040a);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* ❄️ снег */
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 12px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    /* 🔐 экран входа */
+    .login {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .login-box {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255,215,0,0.3);
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border-radius: 20px;
+      border: none;
+      background: gold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* 🎄 основной сайт */
+    .site {
+      display: none;
+      height: 100vh;
+      padding: 60px;
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .letter {
+      max-width: 700px;
+      margin: auto;
+      font-size: 22px;
+      line-height: 1.6;
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    .gift {
+      margin-top: 40px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 22px;
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login" id="login">
+  <div class="login-box">
+    <h2>🎅 Секретный доступ</h2>
+    <input id="name" placeholder="Имя">
+    <input id="pass" type="password" placeholder="Пароль">
+    <button onclick="check()">Войти</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<div class="site" id="site">
+  <h1>🎄 Письмо от Деда Мороза</h1>
+  <div class="letter" id="text"></div>
+
+  <div class="gift" onclick="openGift()">🎁 Открыть подарок</div>
+  <div class="hidden" id="giftText">
+    Папа, ты самый лучший ❤️  
+    Спасибо за заботу, поддержку и тепло.
+  </div>
+</div>
+
+<script>
+  // ❄️ снег
+  for (let i = 0; i < 50; i++) {
+    let s = document.createElement("div");
+    s.className = "snowflake";
+    s.innerText = "❄";
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.animationDuration = 5 + Math.random() * 5 + "s";
+    s.style.fontSize = 10 + Math.random() * 10 + "px";
+    document.body.appendChild(s);
+  }
+
+  function check() {
+    const name = document.getElementById("name").value;
+    const pass = document.getElementById("pass").value;
+
+    if (name === "papa" && pass === "dedmoroz2025") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("site").style.display = "block";
+      typeText();
+    } else {
+      document.getElementById("error").innerText = "❌ Неверные данные";
+    }
+  }
+
+  const message = 
+`Дорогой папа 🎅
+
+Я наблюдал за тобой весь год
+и с уверенностью могу сказать —
+ты был заботливым, сильным
+и самым надёжным человеком в семье.
+
+Пусть в новом году
+будет больше радости,
+здоровья и тёплых вечеров.
+
+С любовью,
+Дед Мороз ❄️`;
+
+  let i = 0;
+  function typeText() {
+    if (i < message.length) {
+      document.getElementById("text").innerHTML += message[i];
+      i++;
+      setTimeout(typeText, 40);
+    }
+  }
+
+  function openGift() {
+    document.getElementById("giftText").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
