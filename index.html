@@ -3,21 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Regalo de Papa Noel</title>
 </head>
 <body>
-    
+    <!-- 1️⃣ Логин -->
     <div id="loginDiv" class="center">
-        <h1 class="login_title">Вход для подарка</h1>
+        <h1 class="login_title">Секретный доступ 🎅</h1>
         <input class="login_name" type="text" placeholder="Name">
         <input class="login_password" type="text" placeholder="Password">
         <button class="btn_login">Войти</button>
         <p class="error"></p>
     </div>
 
+    <!-- 2️⃣ Письмо -->
     <div id="container_latter" class="hidden">
-        <div id="letter"></div>
+        <h1 class="title_letter">Письмо от Деда Мороза 🎄</h1>
+        <div class="container_text_letter">
+            <p id="letter"></p>
+        </div>
+            <button class="btn_next">Дальше</button>
+    </div>
+
+    <!-- 3️⃣ Статистика -->
+    <div id="container_statistics" class="hidden">
+        <h1 class="title_statistics">Статистика за год 🎄</h1>
+        <div class="container_stats">
+            <div class="title_stat">Помощь семье ❤️</div>
+            <div class="stat-bar"><div class="stat-fill" id="stat1"></div></div>
+            <div class="title_stat">Починено вещей 🔧</div>
+            <div class="stat-bar"><div class="stat-fill" id="stat2"></div></div>
+            <div class="title_stat">Терпение 😌</div>
+            <div class="stat-bar"><div class="stat-fill" id="stat3"></div></div>
+        </div>
+        <div class="container-stat-btns">
+            <button class="btn_back_stat">Назад</button>
+            <button class="btn_next_stat">Дальше</button>
+        </div>
+    </div>
+
+    <!-- 4️⃣ Подарок -->
+    <div id="container_gift" class="hidden">
+        <h1 class="title_gift">Подарок 🎁</h1>
+        <img src="./images/gifts.png" alt="" id="gift" class="gift">
+
+        <div id="giftContent" class="hidden-gift">
+            <img src="./images/items/money.jpg" alt="" class="item-gift">
+            <img src="./images/items/home.jpg" alt="" class="item-gift">
+            <img src="./images/items/car.jpg" alt="" class="item-gift">
+            <img src="./images/items/bisnes.jpg" alt="" class="item-gift">
+        </div>
+            <button class="btn_back_gift">Назад</button>
+        <div class="confetti"></div>
     </div>
 
     <script src="./index.js"></script>
