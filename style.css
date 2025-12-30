@@ -294,3 +294,29 @@ h1 {
   transform: scale(1.1);
   background-color: #ffe854;
 }
+
+@media (max-width: 480px) {
+    .center {
+        width: 350px;
+    }
+    #letter {
+        font-size: 18px;
+    }
+    .container_text_letter {
+        width: 250px;
+    }
+    .container_stats {
+        width: 240px;
+    }
+    .gift {
+        width: 200px;
+    }
+    .item-gift {
+        width: 100%;
+        max-width: 100px;
+    }
+    .giftContent {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+}
