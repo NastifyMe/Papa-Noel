@@ -1,3 +1,38 @@
+.container_languages {
+  display: flex;
+  justify-content: center; /* по центру горизонтально */
+  gap: 20px; /* расстояние между языками */
+  margin: 20px 0; /* отступ сверху */
+  position: absolute; /* чтобы всегда сверху */
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.container_languages a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: gold;
+  padding: 5px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.5);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container_languages a:hover {
+  background: gold;
+  color: #0b1d3a;
+  cursor: pointer;
+}
+
+.ruso {
+}
+.spanish {
+}
+
+
 /* login */
 body {
   font-family: "Roboto", sans-serif;
